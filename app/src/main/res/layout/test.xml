@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:weightSum="1"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="top"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnupload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|left"
+                android:layout_marginLeft="7dp"
+                android:gravity="center"
+                android:text="ატვირთვა"
+                android:textColor="#ffffff"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:cornerRadius="100dp"
+                app:icon="@drawable/ic_drawable_upload" />
+
+            <TextView
+                android:id="@+id/txtresulttext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="7dp"
+                android:gravity="left"
+                android:text="- ატვირთეთ ბაზა"
+                android:textColor="?android:textColorPrimary"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnExport"
+            android:layout_width="47dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|right"
+            android:layout_marginRight="7dp"
+            android:gravity="right"
+            android:rotation="180"
+            android:textColor="#ffffff"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:cornerRadius="100dp"
+            app:icon="@drawable/ic_drawable_upload" />
+
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="50dp"
+            android:checkedButton="@id/radioaddone"
+            android:orientation="horizontal">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radioaddone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ავტომატური" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radioaddcustom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="მითითება  " />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/customAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="250dp"
+            android:layout_marginTop="50dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:hint="რიცხვი"
+            android:inputType="numberSigned"
+            android:maxWidth="100dp"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="20sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonCameraScan"
+            android:layout_width="52dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|right"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="7dp"
+            android:gravity="right"
+            android:textSize="13sp"
+            app:cornerRadius="100dp"
+            app:icon="@drawable/ic_drawable_camera" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="7dp"
+                android:gravity="top"
+                android:visibility="gone">
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/checkbox_pid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="P_ID"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/checkbox_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:checked="true"
+                    android:text="CODE"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/checkbox_barcode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:checked="true"
+                    android:text="BARCODE"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/checkbox_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:checked="true"
+                    android:text="NAME"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/checkbox_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:checked="true"
+                    android:text="PACKAGE AMOUNT"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/checkbox_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:checked="true"
+                    android:text="PRICE"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/checkbox_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:checked="true"
+                    android:text="GROUP"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/checkbox_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="12dp"
+                    android:checked="true"
+                    android:text="COUNT"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="7dp"
+            android:layout_marginTop="105dp"
+            android:layout_marginBottom="75dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="7dp">
+
+                <HorizontalScrollView
+                    android:id="@+id/horizonalscrolling"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:overScrollMode="never">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ListView
+                            android:id="@android:id/list"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_below="@+id/lvcontainer"
+                            android:layout_marginTop="30dp" />
+
+                        <include
+                            layout="@layout/lst_header"
+                            android:layout_width="2100dp"
+                            android:layout_height="30dp" />
+
+                    </RelativeLayout>
+                </HorizontalScrollView>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginHorizontal="7dp"
+            android:layout_marginBottom="2dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnback"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_weight="0.28"
+                android:text="back"
+                android:textColor="#ffffff"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:cornerRadius="100dp"
+                app:icon="@drawable/ic_drawable_back"
+                app:iconGravity="start" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_weight="0.2"
+                android:gravity="center"
+                android:hint="Code / Barcode"
+                android:paddingHorizontal="5dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/filter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnsearch"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_weight="0.28"
+                android:onClick="Scan"
+                android:text="Scan"
+                android:textColor="#ffffff"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:cornerRadius="100dp"
+                app:icon="@drawable/ic_drawable_search" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <com.android.megainventory.inappkeyboard
+        android:id="@+id/keyboard"
+        android:layout_weight="0.6"
+        android:layout_marginHorizontal="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:orientation="vertical" />
+
+</LinearLayout>

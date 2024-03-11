@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="1700dp"
+    android:background="#F1F1F1"
+    android:layout_height="50dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_marginLeft="10dp"
+        android:id="@+id/lvContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:scrollbars="horizontal">
+
+        <TextView
+            android:id="@+id/txtproductpid"
+            android:layout_width="wrap_content"
+            android:paddingRight="5dp"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="123"
+            android:textColor="#000000"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/txtproductcode"
+            android:layout_width="wrap_content"
+            android:paddingHorizontal="5dp"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="2208092"
+            android:textColor="#000000"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/txtproductbarcode"
+            android:layout_width="wrap_content"
+            android:paddingHorizontal="5dp"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="2621839000009"
+            android:textColor="#000000"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/txtproductname"
+            android:layout_width="wrap_content"
+            android:paddingHorizontal="5dp"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="ხილი/ ბანანი მეორე ხარისხის/ წონის"
+            android:textColor="#000000"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/txtproductpackageamount"
+            android:layout_width="wrap_content"
+            android:paddingHorizontal="5dp"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="კგ"
+            android:textColor="#000000"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/txtproductprice"
+            android:layout_width="wrap_content"
+            android:paddingHorizontal="5dp"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="0.00"
+            android:textColor="#000000"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/txtproductgroup"
+            android:layout_width="wrap_content"
+            android:paddingHorizontal="5dp"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="0208|ხილი"
+            android:textColor="#000000"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/txtproductcount"
+            android:layout_width="wrap_content"
+            android:paddingHorizontal="5dp"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="0.0000"
+            android:textColor="#000000"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+</LinearLayout>

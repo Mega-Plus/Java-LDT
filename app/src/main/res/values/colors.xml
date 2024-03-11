@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFAFAF</color>
+    <color name="purple_500">#CA0E0E</color>
+    <color name="purple_700">#B30000</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+    <!-- Android API 31 Required -->
+    <color name="colorBackground">#fafafa</color>
+    <color name="textColorPrimary">#212121</color>
+    <color name="colorControlHighlight">#4000695C</color>
+    <color name="colorPrimaryDarkVariant">#8a000000</color>
+    <color name="colorPrimaryDark">#FFFFFFFF</color>
+    <color name="colorAccent">#1A237E</color>
+    <color name="colorPrimary">#FFFFFFFF</color>
+
+    <color name="border_color">#CCCCCC</color> <!-- Change the color code as per your requirement -->
+
+    <color name="keyboard_bg_tint">#EFEFEF</color>
+    <color name="keyboard_ripple_color">#475067</color>
+</resources>

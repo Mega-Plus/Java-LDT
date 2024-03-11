@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="5dp"
+    android:paddingStart="10dp"
+    android:paddingEnd="10dp"
+    android:paddingBottom="5dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/go_back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/transparent_background"
+            android:drawableStart="@drawable/baseline_arrow_back_24" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textAlignment="viewStart"
+            android:text="@string/receive"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/overhead"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:hint="@string/overhead"
+                android:text=""
+                android:inputType="number"
+                android:background="#71F9D1D1"/>
+<!--            0797409775 -->
+            <ImageButton
+                android:id="@+id/receipt_button"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:src="@drawable/baseline_receipt_long_24"
+                android:scaleType="center"
+                android:layout_weight="2"
+                android:background="@drawable/transparent_background"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="10dp">
+
+            <EditText
+                android:id="@+id/order_number"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:padding="5dp"
+                android:hint="@string/order_number"
+                android:background="#71F9D1D1"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="bottom"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+
+
+
+        <ListView
+            android:id="@+id/listView_ORDERS"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1">
+        </ListView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom">
+
+            <Button
+                android:id="@+id/start_button"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/start_button_receive_activity"
+                android:drawableStart="@drawable/baseline_arrow_forward_24"
+                android:padding="5dp"
+                android:text="@string/start"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

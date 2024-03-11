@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/header_bar"
+    android:layout_width="2100dp"
+    android:layout_height="wrap_content"
+    android:background="#202020"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/lvContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="3dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal"
+        android:scrollbars="horizontal"
+        android:weightSum="1.9">
+
+        <TextView
+            android:id="@+id/txtproductpid"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.065"
+            android:gravity="left"
+            android:text="ID"
+            android:textColor="#F3F3F3"
+            android:textSize="@dimen/unfiltered_textsize" />
+
+        <TextView
+            android:id="@+id/txtproductcode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.0015"
+            android:gravity="left"
+            android:text="@string/header_code"
+            android:textColor="#000000"
+            android:textSize="@dimen/unfiltered_textsize" />
+
+        <TextView
+            android:id="@+id/txtproductbarcode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.17"
+            android:gravity="left"
+            android:text="@string/header_barcode"
+            android:textColor="#F3F3F3"
+            android:textSize="@dimen/unfiltered_textsize" />
+
+        <TextView
+            android:id="@+id/txtproductname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.4"
+            android:gravity="left"
+            android:text="@string/header_name"
+            android:textColor="#F3F3F3"
+            android:textSize="@dimen/unfiltered_textsize" />
+
+        <TextView
+            android:id="@+id/txtproductprimeprice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:gravity="left"
+            android:text="@string/header_price_price"
+            android:textColor="#F3F3F3"
+            android:textSize="@dimen/unfiltered_textsize" />
+
+        <TextView
+            android:id="@+id/txtproductprice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:gravity="left"
+            android:text="@string/header_price"
+            android:textColor="#F3F3F3"
+            android:textSize="@dimen/unfiltered_textsize" />
+
+        <TextView
+            android:id="@+id/txtproductgroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.35"
+            android:gravity="left"
+            android:text="@string/header_group"
+            android:textColor="#F3F3F3"
+            android:textSize="@dimen/unfiltered_textsize" />
+
+        <TextView
+            android:id="@+id/txtproductcount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.115"
+            android:gravity="left"
+            android:text="@string/header_count"
+            android:textColor="#F3F3F3"
+            android:textSize="@dimen/unfiltered_textsize" />
+
+        <TextView
+            android:id="@+id/txtproductanagweri"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.09"
+            android:gravity="left"
+            android:text="@string/header_anagceri"
+            android:textColor="#F3F3F3"
+            android:textSize="@dimen/unfiltered_textsize" />
+
+        <TextView
+            android:id="@+id/txtproductdifference"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="0.08"
+            android:gravity="left"
+            android:text="@string/header_diff"
+            android:textColor="#F3F3F3"
+            android:textSize="@dimen/unfiltered_textsize" />
+
+    </LinearLayout>
+</LinearLayout>

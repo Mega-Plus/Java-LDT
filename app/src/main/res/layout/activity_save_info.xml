@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/paramheader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Parameters"
+            android:gravity="center"
+            android:textSize="26sp" />
+
+        <TextView
+            android:id="@+id/server_ip_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Server IP:"
+            android:layout_marginTop="50dp"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/server_ip_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/server_ip_label"
+            android:layout_marginTop="0dp"
+            android:hint="Enter Server IP"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/server_pass_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/server_ip_edit_text"
+            android:layout_marginTop="16dp"
+            android:text="Server Password:"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/server_pass_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/server_pass_label"
+            android:layout_marginTop="0dp"
+            android:hint="Enter Server Password"
+            android:inputType="textPassword" />
+
+        <TextView
+            android:id="@+id/object_name_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/server_pass_edit_text"
+            android:layout_marginTop="16dp"
+            android:text="Object Name:"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/object_name_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/object_name_label"
+            android:layout_marginTop="0dp"
+            android:hint="Enter Object Name"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/proxy_server_ip_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/object_name_edit_text"
+            android:layout_marginTop="16dp"
+            android:text="Proxy Server IP:"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/proxy_server_ip_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/proxy_server_ip_label"
+            android:layout_marginTop="0dp"
+            android:hint="Enter Proxy Server IP"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/save_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:layout_alignParentBottom="true" />
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

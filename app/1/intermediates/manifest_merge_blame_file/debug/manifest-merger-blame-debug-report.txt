@@ -1,0 +1,156 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.android.csvtest"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="31" />
+9-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+11-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:5:5-80
+11-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:5:22-77
+12    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+12-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:6:5-81
+12-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:6:22-78
+13    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+13-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:7:5-81
+13-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:7:22-79
+14    <uses-permission android:name="android.permission.CAMERA" />
+14-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:8:5-65
+14-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:8:22-62
+15    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+15-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:9:5-80
+15-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:9:22-77
+16
+17    <uses-feature android:name="android.hardware.camera" />
+17-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:11:5-60
+17-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:11:19-57
+18    <uses-feature android:name="android.hardware.camera.autofocus" />
+18-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:12:5-70
+18-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:12:19-67
+19    <uses-feature
+19-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\NIK\.gradle\caches\transforms-3\5041f70a6e856d1454fa85205a4cd655\transformed\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:27:5-29:36
+20        android:name="android.hardware.camera.front"
+20-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\NIK\.gradle\caches\transforms-3\5041f70a6e856d1454fa85205a4cd655\transformed\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:28:9-53
+21        android:required="false" />
+21-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\NIK\.gradle\caches\transforms-3\5041f70a6e856d1454fa85205a4cd655\transformed\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:29:9-33
+22    <uses-feature
+22-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\NIK\.gradle\caches\transforms-3\5041f70a6e856d1454fa85205a4cd655\transformed\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:35:5-37:36
+23        android:name="android.hardware.camera.flash"
+23-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\NIK\.gradle\caches\transforms-3\5041f70a6e856d1454fa85205a4cd655\transformed\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:36:9-53
+24        android:required="false" />
+24-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\NIK\.gradle\caches\transforms-3\5041f70a6e856d1454fa85205a4cd655\transformed\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:37:9-33
+25    <uses-feature
+25-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\NIK\.gradle\caches\transforms-3\5041f70a6e856d1454fa85205a4cd655\transformed\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:38:5-40:36
+26        android:name="android.hardware.screen.landscape"
+26-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\NIK\.gradle\caches\transforms-3\5041f70a6e856d1454fa85205a4cd655\transformed\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:39:9-57
+27        android:required="false" />
+27-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\NIK\.gradle\caches\transforms-3\5041f70a6e856d1454fa85205a4cd655\transformed\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:40:9-33
+28    <uses-feature
+28-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\NIK\.gradle\caches\transforms-3\5041f70a6e856d1454fa85205a4cd655\transformed\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:41:5-43:36
+29        android:name="android.hardware.wifi"
+29-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\NIK\.gradle\caches\transforms-3\5041f70a6e856d1454fa85205a4cd655\transformed\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:42:9-45
+30        android:required="false" />
+30-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\NIK\.gradle\caches\transforms-3\5041f70a6e856d1454fa85205a4cd655\transformed\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:43:9-33
+31
+32    <application
+32-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:14:5-37:19
+33        android:allowBackup="true"
+33-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:15:9-35
+34        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+34-->[androidx.core:core:1.7.0] C:\Users\NIK\.gradle\caches\transforms-3\21249a56641fb0309777a5ae16ce99ff\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
+35        android:debuggable="true"
+36        android:hardwareAccelerated="true"
+36-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:21:9-43
+37        android:icon="@mipmap/ic_launcher"
+37-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:16:9-43
+38        android:label="@string/app_name"
+38-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:18:9-41
+39        android:largeHeap="true"
+39-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:22:9-33
+40        android:requestLegacyExternalStorage="true"
+40-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:17:9-52
+41        android:roundIcon="@mipmap/ic_launcher_round"
+41-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:19:9-54
+42        android:supportsRtl="true"
+42-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:20:9-35
+43        android:testOnly="true"
+44        android:theme="@style/Theme.Csvtest" >
+44-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:23:9-45
+45        <activity
+45-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:24:9-32:20
+46            android:name="com.android.csvtest.MainActivity"
+46-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:25:13-41
+47            android:exported="true" >
+47-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:26:13-36
+48            <intent-filter>
+48-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:27:13-31:29
+49                <action android:name="android.intent.action.MAIN" />
+49-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:28:17-69
+49-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:28:25-66
+50
+51                <category android:name="android.intent.category.LAUNCHER" />
+51-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:30:17-77
+51-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:30:27-74
+52            </intent-filter>
+53        </activity>
+54        <activity
+54-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:33:9-36:56
+55            android:name="com.android.csvtest.Capture"
+55-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:33:19-42
+56            android:screenOrientation="portrait"
+56-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:34:13-49
+57            android:stateNotNeeded="true"
+57-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:35:13-42
+58            android:theme="@style/zxing_CaptureTheme" />
+58-->C:\Users\NIK\Desktop\SAVELASTs\csv_database_explorer-main\app\src\main\AndroidManifest.xml:36:13-54
+59        <activity
+59-->[com.nbsp:materialfilepicker:1.9.1] C:\Users\NIK\.gradle\caches\transforms-3\2f6b0662b1ad4ea044c62727383eec65\transformed\jetified-materialfilepicker-1.9.1\AndroidManifest.xml:14:9-17:20
+60            android:name="com.nbsp.materialfilepicker.ui.FilePickerActivity"
+60-->[com.nbsp:materialfilepicker:1.9.1] C:\Users\NIK\.gradle\caches\transforms-3\2f6b0662b1ad4ea044c62727383eec65\transformed\jetified-materialfilepicker-1.9.1\AndroidManifest.xml:15:13-77
+61            android:theme="@style/MFP_BaseTheme" >
+61-->[com.nbsp:materialfilepicker:1.9.1] C:\Users\NIK\.gradle\caches\transforms-3\2f6b0662b1ad4ea044c62727383eec65\transformed\jetified-materialfilepicker-1.9.1\AndroidManifest.xml:16:13-49
+62        </activity>
+63        <activity
+63-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\NIK\.gradle\caches\transforms-3\5041f70a6e856d1454fa85205a4cd655\transformed\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:46:9-52:63
+64            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+64-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\NIK\.gradle\caches\transforms-3\5041f70a6e856d1454fa85205a4cd655\transformed\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:47:13-74
+65            android:clearTaskOnLaunch="true"
+65-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\NIK\.gradle\caches\transforms-3\5041f70a6e856d1454fa85205a4cd655\transformed\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:48:13-45
+66            android:screenOrientation="sensorLandscape"
+66-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\NIK\.gradle\caches\transforms-3\5041f70a6e856d1454fa85205a4cd655\transformed\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:49:13-56
+67            android:stateNotNeeded="true"
+67-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\NIK\.gradle\caches\transforms-3\5041f70a6e856d1454fa85205a4cd655\transformed\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:50:13-42
+68            android:theme="@style/zxing_CaptureTheme"
+68-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\NIK\.gradle\caches\transforms-3\5041f70a6e856d1454fa85205a4cd655\transformed\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:51:13-54
+69            android:windowSoftInputMode="stateAlwaysHidden" />
+69-->[com.journeyapps:zxing-android-embedded:3.4.0] C:\Users\NIK\.gradle\caches\transforms-3\5041f70a6e856d1454fa85205a4cd655\transformed\jetified-zxing-android-embedded-3.4.0\AndroidManifest.xml:52:13-60
+70
+71        <provider
+71-->[androidx.emoji2:emoji2:1.0.0] C:\Users\NIK\.gradle\caches\transforms-3\beb1e8c1d1724370afa1be71eb324942\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+72            android:name="androidx.startup.InitializationProvider"
+72-->[androidx.emoji2:emoji2:1.0.0] C:\Users\NIK\.gradle\caches\transforms-3\beb1e8c1d1724370afa1be71eb324942\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
+73            android:authorities="com.android.csvtest.androidx-startup"
+73-->[androidx.emoji2:emoji2:1.0.0] C:\Users\NIK\.gradle\caches\transforms-3\beb1e8c1d1724370afa1be71eb324942\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
+74            android:exported="false" >
+74-->[androidx.emoji2:emoji2:1.0.0] C:\Users\NIK\.gradle\caches\transforms-3\beb1e8c1d1724370afa1be71eb324942\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
+75            <meta-data
+75-->[androidx.emoji2:emoji2:1.0.0] C:\Users\NIK\.gradle\caches\transforms-3\beb1e8c1d1724370afa1be71eb324942\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+76                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+76-->[androidx.emoji2:emoji2:1.0.0] C:\Users\NIK\.gradle\caches\transforms-3\beb1e8c1d1724370afa1be71eb324942\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
+77                android:value="androidx.startup" />
+77-->[androidx.emoji2:emoji2:1.0.0] C:\Users\NIK\.gradle\caches\transforms-3\beb1e8c1d1724370afa1be71eb324942\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
+78            <meta-data
+78-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\NIK\.gradle\caches\transforms-3\4d87c3e3b70abeed5e61faf08f3b9b5b\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+79                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+79-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\NIK\.gradle\caches\transforms-3\4d87c3e3b70abeed5e61faf08f3b9b5b\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+80                android:value="androidx.startup" />
+80-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\NIK\.gradle\caches\transforms-3\4d87c3e3b70abeed5e61faf08f3b9b5b\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+81        </provider>
+82    </application>
+83
+84</manifest>

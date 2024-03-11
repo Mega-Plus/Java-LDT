@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="2100dp"
+    android:background="#F1F1F1"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_marginLeft="10dp"
+        android:id="@+id/lvContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1.9"
+        android:orientation="horizontal"
+        android:scrollbars="horizontal">
+
+        <TextView
+            android:id="@+id/txtproductpid"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.065"
+            android:gravity="left"
+            android:text="123"
+            android:textColor="#000000"
+            android:textSize="@dimen/unfiltered_textsize" />
+
+        <TextView
+            android:id="@+id/txtproductcode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.0015"
+            android:gravity="left"
+            android:text="2208092"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/zero_textsize" />
+
+        <TextView
+            android:id="@+id/txtproductbarcode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.17"
+            android:gravity="left"
+            android:text="2621839000009"
+            android:textColor="#000000"
+            android:textSize="@dimen/unfiltered_textsize" />
+
+        <TextView
+            android:id="@+id/txtproductname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.4"
+            android:gravity="left"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="ხილი/ ბანანი მეორე ხარისხის/ წონის"
+            android:textColor="#000000"
+            android:textSize="@dimen/ten_textsize" />
+
+        <TextView
+            android:id="@+id/txtproductprimeprice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:gravity="left"
+            android:text="0.00"
+            android:textColor="#000000"
+            android:textSize="@dimen/unfiltered_textsize" />
+
+        <TextView
+            android:id="@+id/txtproductprice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:gravity="left"
+            android:text="0.00"
+            android:textColor="#000000"
+            android:textSize="@dimen/unfiltered_textsize" />
+
+        <TextView
+            android:id="@+id/txtproductgroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.35"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:gravity="left"
+            android:text="0208|ხილი"
+            android:textColor="#000000"
+            android:textSize="@dimen/unfiltered_textsize" />
+
+        <TextView
+            android:id="@+id/txtproductcount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.115"
+            android:gravity="left"
+            android:text="0.0000"
+            android:textColor="#000000"
+            android:textSize="@dimen/unfiltered_textsize" />
+
+        <TextView
+            android:id="@+id/txtproductanagweri"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.09"
+            android:gravity="left"
+            android:text="0208|ხილი"
+            android:textColor="#000000"
+            android:textSize="@dimen/unfiltered_textsize" />
+
+        <TextView
+            android:id="@+id/txtproductdifference"
+            android:layout_width="0dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.08"
+            android:gravity="left"
+            android:text="0.0000"
+            android:textColor="#000000"
+            android:textSize="@dimen/unfiltered_textsize" />
+
+    </LinearLayout>
+</LinearLayout>

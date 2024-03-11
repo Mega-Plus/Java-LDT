@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta data-n-head="1" http-equiv="Content-Security-Policy"
+          content="default-src * 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval'; connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; frame-src *; style-src * 'unsafe-inline';">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Data Info</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td data-info="John">John</td>
+        <td data-info="25">25</td>
+        <td data-info="Click for John's Info">Click for John's Info</td>
+    </tr>
+    <tr>
+        <td data-info="Jane">Jane</td>
+        <td data-info="30">30</td>
+        <td data-info="Click for Jane's Info">Click for Jane's Info</td>
+    </tr>
+    <tr>
+        <td data-info="Bob">Bob</td>
+        <td data-info="22">22</td>
+        <td data-info="Click for Bob's Info">Click for Bob's Info</td>
+    </tr>
+    </tbody>
+</table>
+
+<script>
+    document.addEventListener("click", function(event) {
+        if (event.target && event.target.getAttribute("data-info")) {
+            const info = event.target.getAttribute("data-info");
+            sendDataToBackend(info);
+        }
+    });
+
+    function sendDataToBackend(info) {
+        axios.post('http://192.168.1.140:9999/receive_data', {
+            data: info
+        })
+        .then(response => {
+            console.log(response.data.message);
+        });
+    }
+
+
+
+</script>
+
+
+</body>
+
+</html>
