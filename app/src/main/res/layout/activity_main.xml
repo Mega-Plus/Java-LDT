@@ -1,92 +1,96 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<ScrollView android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="10dp">
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-
-
-    <Button
-        android:id="@+id/download_button"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:drawableStart="@drawable/baseline_file_download_24"
-        android:text="@string/download"
-        android:background="@drawable/main_activity_buttons"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:enabled="false" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="10dp">
 
-    <Button
-        android:id="@+id/print_button"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:drawableStart="@drawable/baseline_local_printshop_24"
-        android:text="@string/print"
-        android:background="@drawable/main_activity_buttons"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
-        android:layout_marginTop="8dp"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:enabled="false" />
 
-    <Button
-        android:id="@+id/description_button"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:drawableStart="@drawable/baseline_inventory_24"
-        android:text="@string/Inventory"
-        android:background="@drawable/main_activity_buttons"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
-        android:layout_marginTop="8dp"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:enabled="true"/>
 
-    <Button
-        android:id="@+id/receive_button"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:drawableStart="@drawable/baseline_upload_24"
-        android:text="@string/receive"
-        android:background="@drawable/main_activity_buttons"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
-        android:layout_marginTop="8dp"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/download_button"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:drawableStart="@drawable/baseline_file_download_24"
+            android:text="@string/download"
+            android:background="@drawable/main_activity_buttons"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:enabled="false" />
 
-    <Button
-        android:id="@+id/return_button"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:drawableStart="@drawable/baseline_assignment_return_24"
-        android:text="@string/return_back"
-        android:background="@drawable/main_activity_buttons"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
-        android:layout_marginTop="8dp"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:enabled="false" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/print_button"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:drawableStart="@drawable/baseline_local_printshop_24"
+            android:text="@string/print"
+            android:background="@drawable/main_activity_buttons"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:layout_marginTop="8dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:enabled="true" />
 
-    <Button
-        android:id="@+id/parameters"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:drawableStart="@drawable/baseline_playlist_add_check_50"
-        android:text="@string/parameters"
-        android:background="@drawable/main_activity_buttons"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
-        android:layout_marginTop="50dp"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:enabled="true"/>
-</LinearLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/description_button"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:drawableStart="@drawable/baseline_inventory_24"
+            android:text="@string/Inventory"
+            android:background="@drawable/main_activity_buttons"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:layout_marginTop="8dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:enabled="true"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/receive_button"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:drawableStart="@drawable/baseline_upload_24"
+            android:text="@string/receive"
+            android:background="@drawable/main_activity_buttons"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:layout_marginTop="8dp"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/return_button"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:drawableStart="@drawable/baseline_assignment_return_24"
+            android:text="@string/return_back"
+            android:background="@drawable/main_activity_buttons"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:layout_marginTop="8dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:enabled="false" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/parameters"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:drawableStart="@drawable/baseline_playlist_add_check_50"
+            android:text="@string/parameters"
+            android:background="@drawable/main_activity_buttons"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:layout_marginTop="50dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:enabled="true"/>
+    </LinearLayout>
+</ScrollView>

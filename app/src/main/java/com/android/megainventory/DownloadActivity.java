@@ -7,10 +7,6 @@ import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +17,9 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
@@ -58,7 +57,7 @@ public class DownloadActivity extends AppCompatActivity {
         saved_product_list_count = findViewById(R.id.saved_product_list_count);
         webView = findViewById(R.id.web_view);
         mother_layout = findViewById(R.id.root_linear_layout);
-        webview_linear_layout = findViewById(R.id.webview_linear_layout);
+//        webview_linear_layout = findViewById(R.id.webview_linear_layout);
 
 
         count_product.setText(Integer.toString(0));

@@ -51,7 +51,7 @@ public class PRODActivity extends AppCompatActivity {
 
         header.setTextColor(Color.BLACK);
 
-        wb_product.setText(ReceiveActivity.WB_PRODUCT_NAME+"\n"+ReceiveActivity.WB_PRODUCT_BAR);
+        wb_product.setText(ReceiveActivity.WB_PRODUCT_NAME + "\n" + ReceiveActivity.WB_PRODUCT_BAR);
         wb_product.setTextColor(Color.RED);
 
         search.requestFocus();
@@ -60,7 +60,9 @@ public class PRODActivity extends AppCompatActivity {
 
         wb_product.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {search.setText(ReceiveActivity.WB_PRODUCT_BAR);}
+            public void onClick(View v) {
+                search.setText(ReceiveActivity.WB_PRODUCT_BAR);
+            }
         });
 
         go_back_button.setOnClickListener(new View.OnClickListener() {
@@ -81,87 +83,91 @@ public class PRODActivity extends AppCompatActivity {
 
         connect_button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {Connect_BARCODE(); }
+            public void onClick(View v) {
+                Connect_BARCODE();
+            }
         });
-}
+    }
 //----------------------------------------------------------------
 
 
-public void Connect_BARCODE(){
-    String [] SELECTED_PRODUCT= selected2.getText().toString().replace("\'", "\"").split("\r\n");
+    public void Connect_BARCODE() {
+        String[] SELECTED_PRODUCT = selected2.getText().toString().replace("\'", "\"").split("\r\n");
 //    buff.append(p_name+"\r\n").append(p_barcode+"     |").append(p_id).append("-----");
 
-    String RS_NAME=ReceiveActivity.WB_PRODUCT_NAME;
-    String CODE=ReceiveActivity.WB_PRODUCT_BAR;
-    String PID=SELECTED_PRODUCT[1].split("     \\|")[1];
+        String RS_NAME = ReceiveActivity.WB_PRODUCT_NAME;
+        String CODE = ReceiveActivity.WB_PRODUCT_BAR;
+        String PID = SELECTED_PRODUCT[1].split("     \\|")[1];
 
-    String said=ReceiveActivity.WB_SELLER_TIN;
+        String said = ReceiveActivity.WB_SELLER_TIN;
 
-    String newbar=said+"-"+CODE;
-    String inbox=userInput;
+        String newbar = said + "-" + CODE;
+        String inbox = userInput;
 
-    String sql = "INSERT INTO "+SQL.DB_NAME+".dbo.RS_CODES (RS_PID,RS_SAID,RS_CODE,RS_SAID_CODE,RS_NAME,RS_INBOX ) " +
-            "VALUES('"+PID+"','"+said+"',N'"+CODE+"',N'"+newbar+"',N'"+RS_NAME+"','"+inbox+"')";
-    SQL.SQL_Statement(sql);
+        String sql = "INSERT INTO " + SQL.DB_NAME + ".dbo.RS_CODES (RS_PID,RS_SAID,RS_CODE,RS_SAID_CODE,RS_NAME,RS_INBOX ) " +
+                "VALUES('" + PID + "','" + said + "',N'" + CODE + "',N'" + newbar + "',N'" + RS_NAME + "','" + inbox + "')";
+        SQL.SQL_Statement(sql);
 
-    //after connection check for other unconnected products
-    ReceiveActivity.SEE_MISMATCHES();
+        //after connection check for other unconnected products
+        ReceiveActivity.SEE_MISMATCHES();
 
-    if(ReceiveActivity.WB_PRODUCT_NAME.equals("")){
-        finish();
-    }else{
-        wb_product.setText(ReceiveActivity.WB_PRODUCT_NAME+"\n"+ReceiveActivity.WB_PRODUCT_BAR);
+        if (ReceiveActivity.WB_PRODUCT_NAME.equals("")) {
+            finish();
+        } else {
+            wb_product.setText(ReceiveActivity.WB_PRODUCT_NAME + "\n" + ReceiveActivity.WB_PRODUCT_BAR);
 
-        search.setText("");
-        selected2.setText("");
+            search.setText("");
+            selected2.setText("");
 
-        search.requestFocus();
-        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.showSoftInput(search, InputMethodManager.SHOW_IMPLICIT);
+            search.requestFocus();
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.showSoftInput(search, InputMethodManager.SHOW_IMPLICIT);
+
+        }
 
     }
-
-}
 //----------------------------------------------------------------
 
 
+    public void fill_PRODS(String ORDERN) {
 
-public void fill_PRODS(String ORDERN){
-
-    try {
-        StringBuffer buff =new StringBuffer();
         try {
-            ResultSet rs2w = SQL.SQL_ResultSet("SELECT  p_id,p_name,p_barcode  FROM ["+SQL.DB_NAME+"].[dbo].[PRODUCTS] where p_name   like N'%"+ORDERN+"%' or p_barcode   like'%"+ORDERN+"%'");
-        while (rs2w.next()) {
+            StringBuffer buff = new StringBuffer();
+            try {
+                ResultSet rs2w = SQL.SQL_ResultSet("SELECT  p_id,p_name,p_barcode  FROM [" + SQL.DB_NAME + "].[dbo].[PRODUCTS] where p_name   like N'%" + ORDERN + "%' or p_barcode   like'%" + ORDERN + "%'");
+                while (rs2w.next()) {
 
-            String p_id = (rs2w.getString("p_id"));
-            String p_barcode = (rs2w.getString("p_barcode").replace("|",""));
-            String p_name = (rs2w.getString("p_name").replace("|",""));
+                    String p_id = (rs2w.getString("p_id"));
+                    String p_barcode = (rs2w.getString("p_barcode").replace("|", ""));
+                    String p_name = (rs2w.getString("p_name").replace("|", ""));
 
-                buff.append(p_name+"\r\n").append(p_barcode+"     |").append(p_id).append("-----");
+                    buff.append(p_name + "\r\n").append(p_barcode + "     |").append(p_id).append("-----");
 //                Log.d("WaybillService", "username: " + username);
 
 
+                }
+            } catch (Exception e) {
+            }
+            LISTFILL(buff.toString(), R.id.listView_products);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        }catch (Exception e) {}
-        LISTFILL(buff.toString(),R.id.listView_products);
-    }catch (Exception e){  e.printStackTrace();}
 
-}
+    }
 //----------------------------------------------------------------
 
 //public static String P_ID_SHARED="";
 
-    public void LISTFILL(String info, int ListVi){
+    public void LISTFILL(String info, int ListVi) {
 
-        ListView ListV = (ListView)  findViewById(ListVi);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>( this, android.R.layout.simple_list_item_1, info.toString().split("-----"));
+        ListView ListV = (ListView) findViewById(ListVi);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, info.toString().split("-----"));
         ListV.setAdapter(adapter);
 
         ListV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View v,int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
 
-                String  DOC=(String) ((TextView) v ).getText();
+                String DOC = (String) ((TextView) v).getText();
 //                  DOC =DOC.split(PR)[0];
                 selected2.setText(DOC);
                 showNumberInputDialog("მიუთითეთ ჩასაშლელი რაოდენობა \n(მაგალითად თუ სიგარეტი ზედნადებში ბლოკით წერია, მიუთითეთ 10, სხვა შემთხვევებში უბრალოდ 1 ჩაწერეთ) ");
@@ -171,7 +177,7 @@ public void fill_PRODS(String ORDERN){
 //----------------------------------------------------------------
 
 
-    private void showExitConfirmation(){
+    private void showExitConfirmation() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.CustomAlertDialog);
 
@@ -192,20 +198,11 @@ public void fill_PRODS(String ORDERN){
 //----------------------------------------------------------------
 
 
-
-
-
-
-
-
-
     private void hideKeyboard(View v) {
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
     }
 //----------------------------------------------------------------
-
-
 
 
     public void showToast(String message) {
@@ -233,12 +230,9 @@ public void fill_PRODS(String ORDERN){
 //----------------------------------------------------------------
 
 
+    String userInput = "";
 
-
-
-    String userInput ="";
-
-    private void showNumberInputDialog(String message ) {
+    private void showNumberInputDialog(String message) {
 
 //        LayoutInflater inflater = LayoutInflater.from(this);
 //        View dialogView = inflater.inflate(R.layout.custom_dialog_layout, null);
@@ -256,9 +250,9 @@ public void fill_PRODS(String ORDERN){
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                  userInput = input.getText().toString();
+                userInput = input.getText().toString();
 
-                  InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(input.getWindowToken(), 0);
 
 
@@ -277,10 +271,6 @@ public void fill_PRODS(String ORDERN){
 
     }
 //----------------------------------------------------------------
-
-
-
-
 
 
 }
