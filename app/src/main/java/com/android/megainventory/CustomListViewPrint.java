@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.appcompat.widget.AppCompatTextView;
 
 import java.util.List;
@@ -22,16 +23,20 @@ public class CustomListViewPrint extends ArrayAdapter<ListItem> {
     private AppCompatTextView productCountWholeTextView;
     private int finalProductCount;
     private int finalProductCountWhole;
+    private List<ListItem> listItems;
+    public AppCompatTextView saved_product_list_count;
 
 
-    public CustomListViewPrint(@NonNull Context context, int resource, List<ListItem> items, AppCompatTextView productCountTextView, AppCompatTextView productCountWholeTextView) {
+    public CustomListViewPrint(@NonNull Context context, int resource, List<ListItem> items, AppCompatTextView productCountTextView, AppCompatTextView productCountWholeTextView, AppCompatTextView saved_product_list_count) {
         super(context, resource, items);
         this.context = context;
         this.resource = resource;
+        this.listItems = items;
         this.productCountTextView = productCountTextView;
         this.productCountWholeTextView = productCountWholeTextView;
         this.finalProductCount = items.size();
         this.finalProductCountWhole = returnWholeCount(items);
+        this.saved_product_list_count = saved_product_list_count;
     }
 
     @NonNull
@@ -57,6 +62,15 @@ public class CustomListViewPrint extends ArrayAdapter<ListItem> {
         AppCompatTextView product_quantity = rowView.findViewById(R.id.listview_product_quantity);
         product_quantity.setText(String.format("რაოდენობა: %d", item.quantity));
 
+        AppCompatImageButton list_item_delete_button = rowView.findViewById(R.id.list_item_delete_button);
+        list_item_delete_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deleteListItem(item);
+            }
+        });
+
+
         AppCompatButton minus_button = rowView.findViewById(R.id.minus_button_listview);
         minus_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,6 +93,17 @@ public class CustomListViewPrint extends ArrayAdapter<ListItem> {
         productCountWholeTextView.setText(String.format("სულ: %d", finalProductCountWhole));
 
         return rowView;
+    }
+
+    private void deleteListItem(ListItem item) {
+        this.listItems.remove(item);
+        remove(item);
+        finalProductCount--;
+        finalProductCountWhole -= item.quantity;
+        saved_product_list_count.setText(Integer.toString(this.listItems.size()));
+        productCountTextView.setText(String.format("რაოდენობა: %d", finalProductCount));
+        productCountWholeTextView.setText(String.format("სულ: %d", finalProductCountWhole));
+        System.out.println(productCountTextView.getText());
     }
 
 

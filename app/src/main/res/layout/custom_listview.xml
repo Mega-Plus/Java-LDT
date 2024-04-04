@@ -34,7 +34,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="რაოდენობა = 1"/>
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/list_item_delete_button"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#B6F9D1D1"
+                android:padding="15dp"
+                android:src="@drawable/baseline_delete_forever_24" />
         </LinearLayout>
+
 
     </LinearLayout>
 

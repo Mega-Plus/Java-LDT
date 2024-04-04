@@ -16,6 +16,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.sql.ResultSet;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -104,6 +105,18 @@ public class PrintActivity extends AppCompatActivity {
                 showProductList();
             }
         });
+
+        delete_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cleatProductList();
+            }
+        });
+    }
+
+    private void cleatProductList() {
+        product_list_for_print.clear();
+        saved_product_list_count.setText("0");
     }
 
 
@@ -128,7 +141,19 @@ public class PrintActivity extends AppCompatActivity {
 
 
     private void printProducts() {
-//        AsyncTask<Void, Void, Void> zebraPrinterService = new ZebraPrinterService(PrintActivity.this,).execute();
+
+        for (int i = 0; i < product_list_for_print.size(); i++) {
+            ListItem product = product_list_for_print.get(i);
+            if (product.quantity > 1) {
+                for (int j = 0; j < product.quantity; j++) {
+                    ZebraPrinterService zebraPrinterService = new ZebraPrinterService(product.P_NAME_SALE, product.P_GOODSGROUP, product.CurrentDate, product.P_BARCODE, product.P_PRICE);
+                    zebraPrinterService.execute();
+                }
+            } else if(product.quantity == 1){
+                ZebraPrinterService zebraPrinterService = new ZebraPrinterService(product.P_NAME_SALE, product.P_GOODSGROUP, product.CurrentDate, product.P_BARCODE, product.P_PRICE);
+                zebraPrinterService.execute();
+            }
+        }
     }
 
     // -1 Every Time -1 Button Is Clicked
@@ -172,23 +197,28 @@ public class PrintActivity extends AppCompatActivity {
             ResultSet resultSet = SQL.SQL_ResultSet(query);
             while (resultSet.next()) {
 
-
+                System.out.println("aqamde movida");
                 String P_BARCODE = (resultSet.getString("P_BARCODE"));
                 String P_NAME_SALE = (resultSet.getString("P_NAME_SALE"));
                 String P_PRICE = (resultSet.getString("P_PRICE"));
-//                String  CurrentDate=(resultSet.getString("CurrentDate"));
+//                String CurrentDate = (resultSet.getString("CurrentDate"));
                 String P_GOODSGROUP = (resultSet.getString("P_GOODSGROUP")).replace("---", "--").replace("--", "-").replace(" ", "");
                 String P_DAFAULTSUPPLIER = (resultSet.getString("P_DAFAULTSUPPLIER")).replace(" ", "");
                 String P_UUID = (resultSet.getString("P_UUID")).replace(" ", "");
                 System.out.println(P_BARCODE + P_NAME_SALE + P_PRICE + P_GOODSGROUP + P_DAFAULTSUPPLIER + P_UUID);
 
-                ListItem listItem = new ListItem(P_BARCODE, P_NAME_SALE, P_PRICE, P_GOODSGROUP, P_DAFAULTSUPPLIER, P_UUID, Integer.parseInt(count_product.getText().toString()));
+                String CurrentDate = "";
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                    LocalDate date = LocalDate.now();
+                    CurrentDate = date.toString();
+                }
+
+                ListItem listItem = new ListItem(P_BARCODE, P_NAME_SALE, P_PRICE, CurrentDate, P_GOODSGROUP, P_DAFAULTSUPPLIER, P_UUID, Integer.parseInt(count_product.getText().toString()));
                 product_list_for_print.add(listItem);
 
             }
         } catch (Exception e) {
             System.out.println(e);
-            ;
         }
 
         saved_product_list_count.setText(Integer.toString(product_list_for_print.size()));
@@ -215,9 +245,17 @@ public class PrintActivity extends AppCompatActivity {
 
         AppCompatTextView product_count_view = bottomSheetLayout.findViewById(R.id.product_count);
         AppCompatTextView product_count_whole_view = bottomSheetLayout.findViewById(R.id.product_count_whole);
+        AppCompatImageButton print_button_sheet = bottomSheetLayout.findViewById(R.id.print_products_button_sheet);
+
+        print_button_sheet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                printProducts();
+            }
+        });
 
 
-        CustomListViewPrint adapter = new CustomListViewPrint(this, R.layout.bottom_sheet_layout, product_list_for_print, product_count_view, product_count_whole_view);
+        CustomListViewPrint adapter = new CustomListViewPrint(this, R.layout.bottom_sheet_layout, product_list_for_print, product_count_view, product_count_whole_view, saved_product_list_count);
         listView.setAdapter(adapter);
 
 

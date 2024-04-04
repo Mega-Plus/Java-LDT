@@ -13,13 +13,11 @@ public class ZebraPrinterService extends AsyncTask<Void, Void, Void> {
 
 
     protected Context context;
+    protected String name, info, info2, barcode, price;
+    protected static final String PRINTER_IP = "192.168.1.40";
+    protected static final int PRINTER_PORT = 9100;
 
-    protected String ip, name, info, info2, barcode, price;
-    protected static final int printer_port = 9100;
-
-    public ZebraPrinterService(Context context, String IP, String name, String info, String info2, String Barcode, String Price) {
-        this.context = context;
-        this.ip = IP;
+    public ZebraPrinterService(String name, String info, String info2, String Barcode, String Price) {
         this.name = name;
         this.info = info;
         this.info2 = info2;
@@ -32,16 +30,30 @@ public class ZebraPrinterService extends AsyncTask<Void, Void, Void> {
 
 
         try {
-            Socket printerSocket = new Socket(this.ip, printer_port);
+            Socket printerSocket = new Socket(PRINTER_IP, PRINTER_PORT);
             OutputStream outputStream = printerSocket.getOutputStream();
+//            @SuppressLint("DefaultLocale") String zpl_command = String.format(
+//                    "^XA\n" +
+//                            "^PON\n" +
+//                            "^LH0,0\n" +
+//                            "^CI28\n" +
+//                            "^FO0,225^A@I,50,40,E:SYL000.TTF^FD %s^FS\n" +
+//                            "^FO0,200^A@I,20,20,E:SYL000.TTF^FD%s^FS\n" +
+//                            "^FO0,180^A@I,20,20,E:SYL000.TTF^FD%s2^FS\n" +
+//                            "^FO250,30^BQI,1,5^FDQA,%s--%s^FS\n" +
+//                            "^FO0,0^A0I,150,100^FD%s^FS\n" +
+//                            "^FO250,0^A@I,20,20,^FD%s^FS\n" +
+//                            "^XZ",
+//                    this.name, this.info, this.info2, this.barcode, this.price, this.price, this.barcode
+//            );
             @SuppressLint("DefaultLocale") String zpl_command = String.format(
                     "^XA\n" +
                             "^PON\n" +
                             "^LH0,0\n" +
                             "^CI28\n" +
-                            "^FO0,225^A@I,50,40,E:SYL000.TTF^FD %s^FS\n" +
-                            "^FO0,200^A@I,20,20,E:SYL000.TTF^FD%s^FS\n" +
-                            "^FO0,180^A@I,20,20,E:SYL000.TTF^FD%s2^FS\n" +
+                            "^FO0,225^A@I,50,40,E:26785855.TTF^FD %s^FS\n" +
+                            "^FO0,200^A@I,20,20,E:26785855.TTF^FD%s^FS\n" +
+                            "^FO0,180^A@I,20,20,E:26785855.TTF^FD%s2^FS\n" +
                             "^FO250,30^BQI,1,5^FDQA,%s--%s^FS\n" +
                             "^FO0,0^A0I,150,100^FD%s^FS\n" +
                             "^FO250,0^A@I,20,20,^FD%s^FS\n" +
